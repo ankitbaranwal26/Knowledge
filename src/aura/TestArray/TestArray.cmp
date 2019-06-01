@@ -1,0 +1,9 @@
+<aura:component >
+	<aura:attribute name="products" type="string[]" default="{'1','2'}" access="public"
+                    description="List of products"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:iteration items="{!v.products}" var="item">
+        <c:TestValue product="{!item}"/>
+        </aura:iteration>
+    <lightning:button label="Save" title="Save" onclick="{! c.reRenderData }"/>
+</aura:component>
